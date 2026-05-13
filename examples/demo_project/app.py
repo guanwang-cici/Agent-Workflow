@@ -7,6 +7,13 @@ def add(left: int, right: int) -> int:
     return left + right
 
 
+def multiply(left: int, right: int) -> int:
+    """
+    Returns the product of two integers.
+    """
+    return left * right
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
