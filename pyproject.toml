@@ -1,0 +1,28 @@
+[project]
+name = "agents-langfuse-workflow"
+version = "0.1.0"
+description = "Five-agent OpenAI Agents SDK workflow with local Langfuse observability."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "langfuse>=3.0.0",
+  "openai-agents>=0.6.0",
+  "openinference-instrumentation-openai-agents>=0.1.0",
+  "pydantic>=2.7.0",
+  "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0",
+]
+
+[project.scripts]
+agent-workflow = "app.main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
